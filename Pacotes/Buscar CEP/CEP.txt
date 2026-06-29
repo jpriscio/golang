@@ -1,0 +1,3 @@
+CEP: 61901-250
+Estado: Ceará
+UF: CE
