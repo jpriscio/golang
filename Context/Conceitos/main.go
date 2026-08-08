@@ -7,19 +7,20 @@ import (
 )
 
 func main() {
-	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	ctx := context.Background()
+	ctx, cancel := context.WithTimeout(ctx, time.Second*5)
 	defer cancel()
 
 	bookHotel(ctx)
+
 }
 
 func bookHotel(ctx context.Context) {
 	select {
 	case <-ctx.Done():
-		fmt.Println("Reserva cancelada, tempo expirado")
+		fmt.Println("Requisição expirada")
 		return
-	case <-time.After(3 * time.Second):
-		fmt.Println("Hotel reservado com sucesso")
-		return
+	case <-time.After(time.Second * 3):
+		fmt.Println("Requisição finalizada")
 	}
 }

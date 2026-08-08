@@ -17,7 +17,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	defer log.Println("Requisição finalizada")
 
 	select {
-	case <-time.After(5 * time.Second):
+	case <-time.After(4 * time.Second):
 		log.Println("Requisição processada")
 		w.Write([]byte("Requisição processada"))
 	case <-ctx.Done():
