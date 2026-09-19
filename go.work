@@ -1,0 +1,10 @@
+go 1.25.0
+
+use (
+	.
+
+	./Fundamentos/Array
+	./Fundamentos/Array-vs-Slice
+	./Fundamentos/Copia-de-matrizes
+	./Hello-World
+)
